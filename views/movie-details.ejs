@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming | <%= movie.title %>
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/movie-details.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar') %>
+        <div class="movie_details-wrapper">
+            <div class="left-container">
+                <div class="movie_Title-container">
+                    <h1 class="movie_title">
+                        <%= movie.title %>
+                    </h1>
+                </div>
+                <div class="movie-content">
+                    <ul class="movie_list">
+                        <li>
+                            <%= movie.ratings %> Star
+                        </li>
+                        <li>
+                            <%= movie.duration %> Min
+                        </li>
+                        <li>
+                            <%= movie.releaseYear %>
+                        </li>
+                        <li>Genre: <%= movie.genre %>
+                        </li>
+                    </ul>
+                </div>
+                <div class="movie_links">
+                    <a href="<%= movie.movie %>">
+                        <button class="play-button">
+                            <span class="play-symbol">▶</span>
+                            Play
+                        </button>
+                    </a>
+                </div>
+                <div class="movie_starring">
+                    <div class="movie_casts">
+                        <p><span class="str">Starring:</span>
+                            <%= movie.cast %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="container-content">
+                    <img src="<%= movie.thumbnail %>" alt="<%= movie.title %>" class="movie_thumbnail">
+                </div>
+            </div>
+        </div>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+.movie_details-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('<%= movie.backgroundImage %>');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+}
+
+/* Left Container */
+.left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movie_title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.movie_list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #ddd;
+}
+
+.movie_list li {
+    margin-bottom: 5px;
+}
+
+.movie_links a {
+    text-decoration: none;
+}
+
+.play-button {
+    padding: .4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    background: rgb(255, 34, 34);
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background-color: #f40612;
+}
+
+.play-symbol {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.movie_starring {
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.movie_casts p {
+    margin: 0;
+}
+
+.str {
+    font-weight: bold;
+}
+
+/* Right Container */
+
+
+.movie_thumbnail {
+    width: 55rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .movie_details-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .right-container {
+        margin-top: 20px;
+    }
+
+    .movie_title {
+        font-size: 2.5rem;
+    }
+
+    .movie_list {
+        font-size: 1rem;
+    }
+
+    .play-button {
+        font-size: 1.3rem;
+    }
+}

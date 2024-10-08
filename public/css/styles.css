@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui;
+}
+
+:root {
+    --primary-bg: #404a7c;
+    --primary-fg: rgba(21, 23, 26, 0.542);
+    --primary-text-clr: rgb(236, 232, 232);
+}
+
+.hero {
+    background-image: url('/images//banner.avif');
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgb(239, 238, 236);
+}
+
+.hero p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(239, 238, 236);
+}
+
+.movies-container {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.latest-movies h2 {
+    font-size: 2rem;
+    color: rgb(41, 41, 41);
+
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+
+}
+
+.card .images {
+    width: 15rem;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.092);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-link .card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-link .card:hover {
+    box-shadow: 0 4px 15px rgba(64, 74, 124, 0.2); /* Correct syntax */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+

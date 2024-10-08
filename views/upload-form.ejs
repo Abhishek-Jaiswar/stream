@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Movie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        label {
+            font-size: 14px;
+            color: #333;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="number"], input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        textarea {
+            resize: none;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Movie</h1>
+        <form action="/movies/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" type="text" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="director">Director</label>
+                <input id="director" type="text" name="director" required>
+            </div>
+            <div class="form-group">
+                <label for="releaseYear">Release Year</label>
+                <input id="releaseYear" type="number" name="releaseYear" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <input id="genre" type="text" name="genre" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (minutes)</label>
+                <input id="duration" type="number" name="duration" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="ratings">Ratings (comma-separated, e.g., 4,5,3)</label>
+                <input id="ratings" type="text" name="ratings">
+            </div>
+            <div class="form-group">
+                <label for="cast">Cast (comma-separated)</label>
+                <input id="cast" type="text" name="cast">
+            </div>
+            <div class="form-group">
+                <label for="movie">Movie File</label>
+                <input id="movie" type="file" name="movie" accept="video/*" required>
+            </div>
+            <div class="form-group">
+                <label for="thumbnail">Thumbnail</label>
+                <input id="thumbnail" type="file" name="thumbnail" accept="image/*" required>
+            </div>
+            <button type="submit">Upload Movie</button>
+        </form>
+    </div>
+</body>
+</html>

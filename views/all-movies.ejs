@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .movie-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .movie-card .content {
+            padding: 15px;
+        }
+
+        .movie-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .movie-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .movie-card .rating {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .movie-card .cast {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .movie-card .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie-card a {
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .movie-card a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movie Collection</h1>
+        <div id="movie-grid" class="movie-grid">
+            <% movies.forEach(function(movie) { %>
+                <a href="/movie/<%= movie._id %>">
+                    <div class="movie-card">
+                        <img src="<%= movie.thumbnail %>" alt="<%= movie.title %>">
+                        <div class="content">
+                            <h2>
+                                <%= movie.title %>
+                            </h2>
+                            <p>
+                                <%= movie.releaseYear %> • <%= movie.genre %> • <%= movie.duration %> min
+                            </p>
+                            <p>
+                                <%= movie.description %>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <% }); %>
+        </div>
+    </div>
+</body>
+
+</html>

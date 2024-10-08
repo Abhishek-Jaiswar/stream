@@ -1,0 +1,13 @@
+<section class="movies-container">
+    <h2>Popular Movies</h2>
+    <div class="card-container">
+      <% popularMovies.forEach(movie => { %>
+        <div class="card">
+          <img class="images" src="<%= movie.image %>" alt="<%= movie.title %>">
+          <h3><%= movie.title %> (<%= movie.year %>)</h3>
+          <p><%= movie.description %></p>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+  
